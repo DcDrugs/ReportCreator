@@ -1,0 +1,2 @@
+Powershell.exe -executionpolicy remotesigned -File ./.venv/Scripts/Activate.ps1
+pyinstaller --noconfirm --onedir --noconsole --onefile --optimize "2" --add-data=.\.venv\\Lib\\site-packages\\pymorphy2_dicts_ru\\data:pymorphy2_dicts_ru\\data  "./main.py"

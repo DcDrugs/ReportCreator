@@ -1,0 +1,84 @@
+{
+    "settings": [
+        {
+            "key": "Settings",
+            "name": "Общие настройки",
+            "type": "group",
+            "children": [
+                {
+                    "key": "Excel",
+                    "name": "Excel файл",
+                    "type": "file",
+                    "value": null
+                },
+                {
+                    "key": "Combobox",
+                    "name": "Поиск осуществлять по",
+                    "type": "str",
+                    "value": null
+                },
+                {
+                    "key": "Template",
+                    "name": "Шаблон",
+                    "type": "file",
+                    "value": null
+                },
+                {
+                    "key": "Result",
+                    "name": "Результат",
+                    "type": "file",
+                    "value": null
+                },
+                {
+                    "key": "DeleteTable",
+                    "name": "Удаление первой таблицы",
+                    "type": "bool",
+                    "value": null
+                }
+            ]
+        },
+        {
+            "key": "Battery",
+            "name": "АКБ",
+            "type": "group",
+            "children": [
+                {
+                    "key": "Cost",
+                    "name": "Цена за аккамулятор",
+                    "type": "float",
+                    "step": 0.01,
+                    "decimals": 2,
+                    "format": "{value}",
+                    "value": 250.0
+                }
+            ]
+        },
+        {
+            "key": "Tire",
+            "name": "Шины",
+            "type": "group",
+            "children": [
+                {
+                    "key": "TypeOfTire",
+                    "name": "Тип шин",
+                    "type": "list",
+                    "value": null,
+                    "limits": [
+                        "Лето",
+                        "Зима",
+                        "Всесезонная"
+                    ]
+                },
+                {
+                    "key": "Cost_SH",
+                    "name": "Цена за шину",
+                    "type": "float",
+                    "step": 0.01,
+                    "decimals": 2,
+                    "format": "{value}",
+                    "value": 260.0
+                }
+            ]
+        }
+    ]
+}

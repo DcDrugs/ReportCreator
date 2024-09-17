@@ -1,0 +1,19 @@
+<RCC>
+  <qresource prefix="images">
+    <file>icons/QSplashScreen.gif</file>
+    <file>icons/home.svg</file>
+    <file>icons/QSplashScreen.png</file>
+    <file>icons/quick_reference.svg</file>
+    <file>icons/close.svg</file>
+    <file>icons/menu-symbol-of-three-parallel-lines-svgrepo-com.png</file>
+    <file>icons/open.svg</file>
+    <file>icons/settings.svg</file>
+    <file>icons/three-line-vertical-svgrepo-com.png</file>
+  </qresource>
+  <qresource prefix="files">
+    <file>styles/style.qss</file>
+  </qresource>
+  <qresource prefix="icons">
+    <file>icons/report.png</file>
+  </qresource>
+</RCC>

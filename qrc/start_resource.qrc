@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="images">
+    <file>icons/QSplashScreen.png</file>
+  </qresource>
+  <qresource prefix="icons">
+    <file>icons/report.ico</file>
+    <file>icons/report.png</file>
+  </qresource>
+</RCC>

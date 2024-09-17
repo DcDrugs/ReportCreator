@@ -1,0 +1,236 @@
+'bool':
+    'value'
+'float':
+    'value'
+    'min'
+    'max'
+    'step'
+    'dec'
+    'siPrefix'
+    'suffix'
+    'decimals'
+'int'
+'str'
+    =========================================================
+    |limits     | [start, stop] numbers                     |
+    =========================================================
+    |step       | Defaults to 1, the spacing between each   |
+    |           | slider tick                               |
+    =========================================================
+    |span       | Instead of limits + step, span can be set |
+    |           | to specify the range of slider options    |
+    |           | (e.g. np.linspace(-pi, pi, 100))          |
+    =========================================================
+    |format     | Format string to determine number of      |
+    |           | decimals to show, etc. Defaults to display|
+    |           | based on span dtype                       |
+    =========================================================
+    |precision  | int number of decimals to keep for float  |
+    |           | tick spaces                               |
+    =========================================================
+
+'group' Group parameters are used mainly as a generic parent item that holds (and groups!) a set of child parameters.
+
+It also provides a simple mechanism for displaying a button or combo that can be used to add new parameters to the group. To enable this, the group must be initialized with the ‘addText’ option (the text will be displayed on a button which, when clicked, will cause addNew() to be called). If the ‘addList’ option is specified as well, then a dropdown-list of addable items will be displayed instead of a button.
+
+'action': Used for displaying a button within the tree.
+
+
+'calendar': Displays a Qt calendar whose date is specified by a ‘format’ option.
+    =========================================================
+    |format     | Format for displaying the date and        |
+    |           | converting from a string. Can be any      |
+    |           | value accepted by QDate.toString and      |
+    |           | fromString, or a stringified version of a |
+    |           | QDateFormat enum, i.e. ‘ISODate’,         | 
+    |           | ‘TextDate’ (default), etc.                | 
+    =========================================================
+
+'checklist' Can be set just like a ListParameter, but allows for multiple values to be selected simultaneously.
+    =========================================================
+    |exclusive  | When False, any number of options can be  | 
+    |           | selected. The resulting value() is a      |
+    |           | list of all checked values. When True,    |
+    |           | it behaves like a list type – only        |
+    |           | one value can be selected. If no values   |
+    |           | are selected and exclusive is set to      |
+    |           | True, the first available limit is        |
+    |           | selected. The return value of an          |
+    |           | exclusive checklist is a single value     |
+    |           | rather than a list with one element.      |
+    =========================================================
+    | delay     | Controls the wait time between editing    |
+    |           | the checkboxes/radio button children and  |
+    |           | firing a “value changed” signal. This     |
+    |           | allows users to edit multiple boxes at    |
+    |           | once for a single value update.           |
+    =========================================================
+
+'color'
+
+'colormap'
+
+'file' Interfaces with the myriad of file options available from a QFileDialog. Note that the output can either be a single file string or list of files, depending on whether fileMode=’ExistingFiles’ is specified. Note that in all cases, absolute file paths are returned unless relativeTo is specified as elaborated below.
+    =========================================================
+    |parent     | Dialog parent                             |
+    =========================================================
+    |winTitle   | Title of dialog window                    |
+    =========================================================
+    |nameFilter | File filter as required by the Qt dialog  |
+    =========================================================
+    |directory  | Where in the file system to open this     |
+    |           | dialog                                    |
+    =========================================================
+    |selectFile | File to preselect                         |
+    =========================================================
+    |relativeTo | Parent directory that, if provided, will  | 
+    |           | be removed from the prefix of all returned| 
+    |           | paths. So, if ‘/my/text/file.txt’ was     |
+    |           | selected, and relativeTo=’my/text/’, the  |
+    |           | return value would be ‘file.txt’. This    |
+    |           | uses os.path.relpath under the hood, so   |
+    |           | expect that behavior.                     |
+    =========================================================
+    |kwargs     | Any enum value accepted by a QFileDialog  |
+    |           | and its value. Values can be a string or  |
+    |           | list of strings, i.e. fileMode=’AnyFile’, |
+    |           | options=[‘ShowDirsOnly’,                  |
+    |           |‘DontResolveSymlinks’]                     |
+    =========================================================
+
+'font' Creates and controls a QFont value. Be careful when selecting options from the font dropdown. since not all fonts are available on all systems
+
+'list' Parameter with a list of acceptable values. By default, this parameter is represtented by a ListParameterItem, displaying a combo box to select a value from the list. In addition to the generic Parameter options, this parameter type accepts a limits argument specifying the list of allowed values. The values may generally be of any data type, as long as they can be represented as a string. If the string representation provided is undesirable, the values may be given as a dictionary mapping the desired string representation to the value.
+
+'pen' Controls the appearance of a QPen value. When saveState is called, the value is encoded as (color, width, style, capStyle, joinStyle, cosmetic)
+    =========================================================
+    |color      | pen color, can be any argument accepted by| 
+    |           | mkColor() (defaults to black)             |
+    =========================================================
+    |width      | integer width >= 0 (defaults to 1)        |
+    =========================================================
+    |style      | String version of QPenStyle enum, i.e.    | 
+    |           | ‘SolidLine’ (default), ‘DashLine’, etc.   |
+    =========================================================
+    |capStyle   | String version of QPenCapStyle enum, i.e. |
+    |           | ‘SquareCap’ (default), ‘RoundCap’, etc.   |
+    =========================================================
+    |joinStyle  | String version of QPenJoinStyle enum, i.e.| 
+    |           | ‘BevelJoin’ (default), ‘RoundJoin’, etc.  |
+    =========================================================
+    |cosmetic   | Boolean, whether or not the pen is        |
+    |           | cosmetic (defaults to True)               |
+    =========================================================
+
+'progress' Displays a progress bar whose value can be set between 0 and 100
+
+'slider'
+
+'text' Editable string, displayed as large text box in the tree.
+
+deviation перевод текста:
+        text - текст
+        tag - во что его нужно преобразовать
+tag:
+    nomn	именительный	Кто? Что?	хомяк ест
+    gent	родительный	Кого? Чего?	у нас нет хомяка
+    datv	дательный	Кому? Чему?	сказать хомяку спасибо
+    accs	винительный	Кого? Что?	хомяк читает книгу
+    ablt	творительный	Кем? Чем?	зерно съедено хомяком
+    loct	предложный	О ком? О чём? и т.п.	хомяка несут в корзинке
+    voct	звательный	Его формы используются при обращении к человеку.	Саш, пойдем в кино.
+    gen2	второй родительный (частичный)	 	ложка сахару (gent - производство сахара); стакан яду (gent - нет яда)
+    acc2	второй винительный	 	записался в солдаты
+    loc2	второй предложный (местный)	 	я у него в долгу (loct - напоминать о долге); висит в шкафу (loct - монолог о шкафе); весь в снегу (loct - писать о снеге)
+
+
+make_many сделать предложение согласованным с числом
+    text - текст, который необходимо преобразовать
+    number - число, с которым нужно согласовать
+
+get_date_now получить дату на данный момент
+
+format_datetime форматирование даты
+    date - дата
+    format - формат даты с %%
+
+to_datetime преобразование из текста в дату
+    data - дата
+    format - формат даты с %%
+
+handle_catch ловим ошибки
+
+math математика python
+
+numpy numpy python
+
+builtins стандартные функции python
+
+datetime библиотека работы с датами python
+
+calendar календарь python
+
+dateutil библиотека для облехчения работы с датами
+
+calendar календарь
+
+jin движок jinja2
+
+docxtpl библиотека для работы с шаблонами
+
+doc объект шаблона созданный приложением
+
+raise выкинуть ошибку
+    text - текст ошибки
+
+get получить значение из excel
+    key - из какой ячейки
+
+find поиск значения из excel
+    sheetName - из какой ячейки 
+    what - что необходимо искать
+    pos - с какой 
+
+jdebug отлаживания приложения в qmessagebox
+    *arg
+    **kwargs
+    переведет все в текстовый формат и выведет в qmessagebox
+    
+import функция для подключение библиотек
+    module - имя модуля (может быть свой собственный *.py файл)
+
+format 
+Используется как дополнительный фильтр в шаблонах.
+
+Согласование слов с числительными
+Полезно при отправке в Телеграм
+
+{{ 24|format(morph='градус', as_text=false) }} => 24 градуса
+Преобразование чисел в текст
+Полезно для TTS. Яндекс и Google допускают ошибки при произнесении числительных.
+
+В morph желательно писать слово/фразу, согласованную с цифрой 1, например:
+
+"перезагружен за одну секунду" - morph='секунду'
+"одна секунда это вечность" - morph='секунда'
+Сервер перезагружен, за {{ 31|round|format(morph='секунду') }} => Сервер перезагружен, за тридцать одну секунду
+
+{{ 31|round|format(morph='секунда') }} - это целая вечность! => тридцать одна секунда - это целая вечность!
+Порядковые числительные
+В morph нужно указать пример, в какую форму преобразовать числительное.
+
+и снова {{ 3|format(morph='первое', as_ordinal=True) }} сентября => и снова третье сентября
+Ручной шаблон согласования
+В случае, если автоматическая морфология допускает ошибки. Укажите слова для чисел: 1, 2, 5.
+
+{{ 5|format(morph=['год','года','лет']) }} => пять лет
+Число без согласования
+{{ 2000435|format(morph='') }} => два миллиона четыреста тридцать пять
+Согласование без вывовда числа
+{{ 5|format(morph='просроченная задача', as_text=None) }} => просроченных задач
+Обратное преобразование
+{{ "два миллиона четыреста тридцать пять"|format(morph='', reverse=true) }} => 2000435
+Дробные числа
+Согласно правилам, целая и дробная части числа согласуются со словом "часть".
+
+{{ 22.2|format(morph='градус') }} => двадцать две целых и две десятых градуса
